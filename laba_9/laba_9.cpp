@@ -93,7 +93,6 @@ void quickSort(int left, int right)
     int i = left, j = right;
     int middle = number[(left + right) / 2].age;
 
-    /* partition */
     while (i <= j)
     {
         while (number[i].age < middle)
@@ -110,7 +109,6 @@ void quickSort(int left, int right)
         }
     }
 
-    /* recursion */
     if (left < j)
         quickSort(left, j);
 
@@ -201,6 +199,10 @@ int main()
             break;
         case 4: system("cls"); cout << "Быстрая сортировка." << endl << endl;
             quickSort(ZERO, amount - 1); cout << endl;
+            for (int i = 0; i < amount; i++) {
+                cout << number[i].age << " ";
+            }
+            cout << endl;
             break;
         case 5: system("cls"); cout << "Сортировка слиянием." << endl << endl;
             int* arr = new int[amount];
